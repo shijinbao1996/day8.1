@@ -1,12 +1,10 @@
 import Vue from 'vue'
 import App from './App.vue'
-import Find from '@/views/Find'
-import My from '@/views/My'
-import Part from '@/views/Part'
-import NotFound from '@/views/NotFound'
-import Ranking from '@/views/Second/Ranking'
-import Recommend from '@/views/Second/Recommend'
-import SongList from '@/views/Second/SongList'
+
+import Home from '@/views/Home'
+import Category from '@/views/Category'
+import Order from '@/views/Order'
+import Mine from '@/views/Mine'
 
 
 let routerPush = VueRouter.prototype.push;
@@ -24,41 +22,24 @@ Vue.config.productionTip = false
 const routes = [
   {
     path:'/',
-    redirect: '/find'
+    component:Home
   },
   {
-    path:'/find',
-    component:Find,
-    name:'Find',
-    children:[
-      {
-        path:'ranking',
-        component:Ranking,
-      },
-      {
-        path:'recommend',
-        component:Recommend,
-      },
-      {
-        path:'songlist',
-        component:SongList,
-      },
-    ]
+    path:'/home',
+    component:Home
   },
   {
-  path:'/my',
-  component:My ,
-  name:'My'
+    path:'/category',
+    component:Category
   },
   {
-    path:'/part/:username/:id',
-    component:Part  ,
-    name:'Part'
-    },
-    {
-      path:'*',
-      component:NotFound
-    }
+    path:'/order',
+    component:Order
+  },
+  {
+    path:'/mine',
+    component:Mine
+  },
 ]
 
 // 创建路由对象：传入规则
@@ -67,17 +48,6 @@ const router = new VueRouter({
   // mode:history
 })
 
-const isLogin = false
-router.beforeEach((to,from,next)=>{
-  // console.log(to);
-   if(to.path == '/my' && !isLogin) {
-    alert('login')
-    next(false)
-   } else{
-    next()
-   }
-   
-})
 
 new Vue({
   router,

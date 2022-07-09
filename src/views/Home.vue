@@ -1,7 +1,7 @@
 <template>
   <div>
-    <p>我的收藏</p>
-    <p>我的历史记录</p>
+    <p>首页新闻</p>
+    <p>首页活动</p>
   </div>
 </template>
 
@@ -9,4 +9,5 @@
 export default {};
 </script>
 
-<style></style>
+<style>
+</style>

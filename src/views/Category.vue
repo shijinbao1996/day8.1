@@ -1,16 +1,13 @@
 <template>
   <div>
-      <p>新歌推荐</p>
-      <p>新碟上架</p>
+    <p>戏剧分类</p>
+    <p>动漫分类</p>
   </div>
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
 
 <style>
-
 </style>
