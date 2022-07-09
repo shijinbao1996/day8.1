@@ -1,8 +1,9 @@
 <template>
   <div>
-    <router-link to="/home">主页</router-link>
-    <router-link to="/news">新闻</router-link>
-    <router-link to="/tiyu">体育</router-link>
+    <p>纯音乐</p>
+    <p>超级温柔的音乐</p>
+    <p>车载低音炮</p>
+    <p>loft-复古音乐</p>
     <div>
       <router-view></router-view>
     </div>

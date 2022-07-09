@@ -1,7 +1,6 @@
 <template>
   <div>
-    <p>我的收藏</p>
-    <p>我的历史记录</p>
+    <p>我的新闻</p>
   </div>
 </template>
 

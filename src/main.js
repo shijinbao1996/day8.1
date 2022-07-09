@@ -1,12 +1,18 @@
 import Vue from 'vue'
 import App from './App.vue'
-import Find from '@/views/Find'
-import My from '@/views/My'
-import Part from '@/views/Part'
-import NotFound from '@/views/NotFound'
-import Ranking from '@/views/Second/Ranking'
-import Recommend from '@/views/Second/Recommend'
-import SongList from '@/views/Second/SongList'
+
+import Home from '@/views/Home'
+import News from '@/views/News'
+import Tiyu from '@/views/Tiyu'
+
+import Tchina from '@/views/Second/TChina'
+import TGuowai from '@/views/Second/TGuowai'
+import Thome from '@/views/Second/THome'
+
+import Shuxue from '@/views/Third/Shuxue'
+import Yingyu from '@/views/Third/Yingyu'
+import Yuwen from '@/views/Third/Yuwen'
+
 
 
 let routerPush = VueRouter.prototype.push;
@@ -23,42 +29,45 @@ Vue.config.productionTip = false
 // 建立路由规则
 const routes = [
   {
-    path:'/',
-    redirect: '/find'
+    path:'/home',
+    component:Home,
   },
   {
-    path:'/find',
-    component:Find,
-    name:'Find',
+    path:'/news',
+    component:News,
+  },
+  {
+    path:'/tiyu',
+    component:Tiyu,
     children:[
       {
-        path:'ranking',
-        component:Ranking,
+        path:'thome',
+        component:Thome
       },
       {
-        path:'recommend',
-        component:Recommend,
+        path:'tguowai',
+        component:TGuowai,
+        children:[
+          {
+            path:'huxue',
+            component:Shuxue,
+          },  
+          {
+            path:'yingyu',
+            component:Yingyu,
+          }, 
+           {
+            path:'yuwen',
+            component:Yuwen,
+          },
+        ]
       },
       {
-        path:'songlist',
-        component:SongList,
+        path:'tchina',
+        component:Tchina
       },
     ]
   },
-  {
-  path:'/my',
-  component:My ,
-  name:'My'
-  },
-  {
-    path:'/part/:username/:id',
-    component:Part  ,
-    name:'Part'
-    },
-    {
-      path:'*',
-      component:NotFound
-    }
 ]
 
 // 创建路由对象：传入规则
